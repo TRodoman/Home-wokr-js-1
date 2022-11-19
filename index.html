@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home wokr js-1</title>
+  </head>
+  <body>
+    <script>
+      var x = 6;
+      var y = 14;
+      var z = 4;
+      var result = (x += y - x++ * z);
+
+      document.write("x += y - x++ * z = " + result + "<br />"); // -4;
+
+      // приоритет 18:  x++  (6);
+      // приоритет 13:  * z  (6 * 4 = 24);
+      // приоритет 12:  y -  (14 - 24 = -10);
+      // приоритет 2:   x += (6 + (-10) = -4);
+
+      var x = 6;
+      var y = 14;
+      var z = 4;
+      var result = (z = --x - y * 5);
+
+      document.write("z = --x - y * 5 = " + result + "<br />"); // -65;
+
+      // приоритет 15:  --x   (5);
+      // приоритет 13:  y * 5 (14 * 5 = 70);
+      // приоритет 12:  y -   (5 - 70 = -65);
+      // приоритет 2:   z =   (-65);
+
+      var x = 6;
+      var y = 14;
+      var z = 4;
+      var result = (y /= x + (5 % z));
+
+      document.write("y /= x + 5 % z = " + result + "<br />"); // 2;
+
+      // приоритет 13:  5 % z (5 % 4 = 1);
+      // приоритет 12:  x +   (6 + 1 = 7);
+      // приоритет 2:   y /=  (14 / 7 = 2);
+
+      var x = 6;
+      var y = 14;
+      var z = 4;
+      var result = z - x++ + y * 5;
+
+      document.write("z - x++ + y * 5 = " + result + "<br />"); // 68;
+
+      // приоритет 18:  x++   (6);
+      // приоритет 13:  y * 5 (14 * 5 = 70);
+      // приоритет 12:  z -   (4 - 6 = -2);
+      // приоритет 12:  x +   (-2 + 70 = 68);
+
+      var x = 6;
+      var y = 14;
+      var z = 4;
+      var result = (x = y - x++ * z);
+
+      document.write("x = y - x++ * z = " + result + "<br />"); // -10;
+
+      // приоритет 18:  x++  (6);
+      // приоритет 13:  * z  (6 * 4 = 24);
+      // приоритет 12:  y -  (14 - 24 = -10);
+      // приоритет 2:   x =  (-10);
+    </script>
+  </body>
+</html>
